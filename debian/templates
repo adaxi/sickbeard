@@ -1,0 +1,1007 @@
+Template: sickbeard/config_version
+Type: string
+Default: 3
+Description: config_version:
+ Please fill in the configuration for config_version
+
+Template: sickbeard/log_dir
+Type: string
+Default: Logs
+Description: log_dir:
+ Please fill in the configuration for log_dir
+
+Template: sickbeard/web_port
+Type: string
+Default: 8081
+Description: web_port:
+ Please fill in the configuration for web_port
+
+Template: sickbeard/web_host
+Type: string
+Default: 0.0.0.0
+Description: web_host:
+ Please fill in the configuration for web_host
+
+Template: sickbeard/web_ipv6
+Type: string
+Default: 0
+Description: web_ipv6:
+ Please fill in the configuration for web_ipv6
+
+Template: sickbeard/web_log
+Type: string
+Default: 0
+Description: web_log:
+ Please fill in the configuration for web_log
+
+Template: sickbeard/web_root
+Type: string
+Default: ""
+Description: web_root:
+ Please fill in the configuration for web_root
+
+Template: sickbeard/web_username
+Type: string
+Default: ""
+Description: web_username:
+ Please fill in the configuration for web_username
+
+Template: sickbeard/web_password
+Type: string
+Default: ""
+Description: web_password:
+ Please fill in the configuration for web_password
+
+Template: sickbeard/anon_redirect
+Type: string
+Default: http://derefer.me/?
+Description: anon_redirect:
+ Please fill in the configuration for anon_redirect
+
+Template: sickbeard/use_api
+Type: string
+Default: 0
+Description: use_api:
+ Please fill in the configuration for use_api
+
+Template: sickbeard/api_key
+Type: string
+Default: ""
+Description: api_key:
+ Please fill in the configuration for api_key
+
+Template: sickbeard/enable_https
+Type: string
+Default: 0
+Description: enable_https:
+ Please fill in the configuration for enable_https
+
+Template: sickbeard/https_cert
+Type: string
+Default: server.crt
+Description: https_cert:
+ Please fill in the configuration for https_cert
+
+Template: sickbeard/https_key
+Type: string
+Default: server.key
+Description: https_key:
+ Please fill in the configuration for https_key
+
+Template: sickbeard/use_nzbs
+Type: string
+Default: 1
+Description: use_nzbs:
+ Please fill in the configuration for use_nzbs
+
+Template: sickbeard/use_torrents
+Type: string
+Default: 0
+Description: use_torrents:
+ Please fill in the configuration for use_torrents
+
+Template: sickbeard/nzb_method
+Type: string
+Default: blackhole
+Description: nzb_method:
+ Please fill in the configuration for nzb_method
+
+Template: sickbeard/usenet_retention
+Type: string
+Default: 500
+Description: usenet_retention:
+ Please fill in the configuration for usenet_retention
+
+Template: sickbeard/search_frequency
+Type: string
+Default: 60
+Description: search_frequency:
+ Please fill in the configuration for search_frequency
+
+Template: sickbeard/download_propers
+Type: string
+Default: 1
+Description: download_propers:
+ Please fill in the configuration for download_propers
+
+Template: sickbeard/quality_default
+Type: string
+Default: 3
+Description: quality_default:
+ Please fill in the configuration for quality_default
+
+Template: sickbeard/status_default
+Type: string
+Default: 5
+Description: status_default:
+ Please fill in the configuration for status_default
+
+Template: sickbeard/flatten_folders_default
+Type: string
+Default: 0
+Description: flatten_folders_default:
+ Please fill in the configuration for flatten_folders_default
+
+Template: sickbeard/provider_order
+Type: string
+Default: nzbs_r_us nzbs_org womble_s_index tvtorrents ezrss torrentleech usenet_crawler nzbx btn sick_beard_index hdbits omgwtfnzbs
+Description: provider_order:
+ Please fill in the configuration for provider_order
+
+Template: sickbeard/version_notify
+Type: string
+Default: 1
+Description: version_notify:
+ Please fill in the configuration for version_notify
+
+Template: sickbeard/naming_pattern
+Type: string
+Default: %SN - %Sx%0E - %EN
+Description: naming_pattern:
+ Please fill in the configuration for naming_pattern
+
+Template: sickbeard/naming_custom_abd
+Type: string
+Default: 0
+Description: naming_custom_abd:
+ Please fill in the configuration for naming_custom_abd
+
+Template: sickbeard/naming_abd_pattern
+Type: string
+Default: %SN - %A-D - %EN
+Description: naming_abd_pattern:
+ Please fill in the configuration for naming_abd_pattern
+
+Template: sickbeard/naming_multi_ep
+Type: string
+Default: 1
+Description: naming_multi_ep:
+ Please fill in the configuration for naming_multi_ep
+
+Template: sickbeard/launch_browser
+Type: string
+Default: 1
+Description: launch_browser:
+ Please fill in the configuration for launch_browser
+
+Template: sickbeard/use_banner
+Type: string
+Default: 0
+Description: use_banner:
+ Please fill in the configuration for use_banner
+
+Template: sickbeard/use_listview
+Type: string
+Default: 0
+Description: use_listview:
+ Please fill in the configuration for use_listview
+
+Template: sickbeard/metadata_xbmc
+Type: string
+Default: 0|0|0|0|0|0
+Description: metadata_xbmc:
+ Please fill in the configuration for metadata_xbmc
+
+Template: sickbeard/metadata_mediabrowser
+Type: string
+Default: 0|0|0|0|0|0
+Description: metadata_mediabrowser:
+ Please fill in the configuration for metadata_mediabrowser
+
+Template: sickbeard/metadata_ps3
+Type: string
+Default: 0|0|0|0|0|0
+Description: metadata_ps3:
+ Please fill in the configuration for metadata_ps3
+
+Template: sickbeard/metadata_wdtv
+Type: string
+Default: 0|0|0|0|0|0
+Description: metadata_wdtv:
+ Please fill in the configuration for metadata_wdtv
+
+Template: sickbeard/metadata_tivo
+Type: string
+Default: 0|0|0|0|0|0
+Description: metadata_tivo:
+ Please fill in the configuration for metadata_tivo
+
+Template: sickbeard/metadata_synology
+Type: string
+Default: 0|0|0|0|0|0
+Description: metadata_synology:
+ Please fill in the configuration for metadata_synology
+
+Template: sickbeard/cache_dir
+Type: string
+Default: cache
+Description: cache_dir:
+ Please fill in the configuration for cache_dir
+
+Template: sickbeard/root_dirs
+Type: string
+Default: ""
+Description: root_dirs:
+ Please fill in the configuration for root_dirs
+
+Template: sickbeard/tv_download_dir
+Type: string
+Default: ""
+Description: tv_download_dir:
+ Please fill in the configuration for tv_download_dir
+
+Template: sickbeard/keep_processed_dir
+Type: string
+Default: 1
+Description: keep_processed_dir:
+ Please fill in the configuration for keep_processed_dir
+
+Template: sickbeard/move_associated_files
+Type: string
+Default: 0
+Description: move_associated_files:
+ Please fill in the configuration for move_associated_files
+
+Template: sickbeard/process_automatically
+Type: string
+Default: 0
+Description: process_automatically:
+ Please fill in the configuration for process_automatically
+
+Template: sickbeard/rename_episodes
+Type: string
+Default: 1
+Description: rename_episodes:
+ Please fill in the configuration for rename_episodes
+
+Template: sickbeard/create_missing_show_dirs
+Type: string
+Default: 0
+Description: create_missing_show_dirs:
+ Please fill in the configuration for create_missing_show_dirs
+
+Template: sickbeard/add_shows_wo_dir
+Type: string
+Default: 0
+Description: add_shows_wo_dir:
+ Please fill in the configuration for add_shows_wo_dir
+
+Template: sickbeard/extra_scripts
+Type: string
+Default: ""
+Description: extra_scripts:
+ Please fill in the configuration for extra_scripts
+
+Template: sickbeard/git_path
+Type: string
+Default: ""
+Description: git_path:
+ Please fill in the configuration for git_path
+
+Template: sickbeard/ignore_words
+Type: string
+Default: "german,french,core2hd,dutch,swedish"
+Description: ignore_words:
+ Please fill in the configuration for ignore_words
+
+Template: sickbeard/nzb_dir
+Type: string
+Default: ""
+Description: nzb_dir:
+ Please fill in the configuration for nzb_dir
+
+Template: sickbeard/torrent_dir
+Type: string
+Default: ""
+Description: torrent_dir:
+ Please fill in the configuration for torrent_dir
+
+Template: sickbeard/ezrss
+Type: string
+Default: 0
+Description: ezrss:
+ Please fill in the configuration for ezrss
+
+Template: sickbeard/hdbits
+Type: string
+Default: 0
+Description: hdbits:
+ Please fill in the configuration for hdbits
+
+Template: sickbeard/hdbits_username
+Type: string
+Default: ""
+Description: hdbits_username:
+ Please fill in the configuration for hdbits_username
+
+Template: sickbeard/hdbits_passkey
+Type: string
+Default: ""
+Description: hdbits_passkey:
+ Please fill in the configuration for hdbits_passkey
+
+Template: sickbeard/tvtorrents
+Type: string
+Default: 0
+Description: tvtorrents:
+ Please fill in the configuration for tvtorrents
+
+Template: sickbeard/tvtorrents_digest
+Type: string
+Default: ""
+Description: tvtorrents_digest:
+ Please fill in the configuration for tvtorrents_digest
+
+Template: sickbeard/tvtorrents_hash
+Type: string
+Default: ""
+Description: tvtorrents_hash:
+ Please fill in the configuration for tvtorrents_hash
+
+Template: sickbeard/btn
+Type: string
+Default: 0
+Description: btn:
+ Please fill in the configuration for btn
+
+Template: sickbeard/btn_api_key
+Type: string
+Default: ""
+Description: btn_api_key:
+ Please fill in the configuration for btn_api_key
+
+Template: sickbeard/torrentleech
+Type: string
+Default: 0
+Description: torrentleech:
+ Please fill in the configuration for torrentleech
+
+Template: sickbeard/torrentleech_key
+Type: string
+Default: ""
+Description: torrentleech_key:
+ Please fill in the configuration for torrentleech_key
+
+Template: sickbeard/nzbs
+Type: string
+Default: 0
+Description: nzbs:
+ Please fill in the configuration for nzbs
+
+Template: sickbeard/nzbs_uid
+Type: string
+Default: ""
+Description: nzbs_uid:
+ Please fill in the configuration for nzbs_uid
+
+Template: sickbeard/nzbs_hash
+Type: string
+Default: ""
+Description: nzbs_hash:
+ Please fill in the configuration for nzbs_hash
+
+Template: sickbeard/nzbsrus
+Type: string
+Default: 0
+Description: nzbsrus:
+ Please fill in the configuration for nzbsrus
+
+Template: sickbeard/nzbsrus_uid
+Type: string
+Default: ""
+Description: nzbsrus_uid:
+ Please fill in the configuration for nzbsrus_uid
+
+Template: sickbeard/nzbsrus_hash
+Type: string
+Default: ""
+Description: nzbsrus_hash:
+ Please fill in the configuration for nzbsrus_hash
+
+Template: sickbeard/nzbmatrix
+Type: string
+Default: 0
+Description: nzbmatrix:
+ Please fill in the configuration for nzbmatrix
+
+Template: sickbeard/nzbmatrix_username
+Type: string
+Default: ""
+Description: nzbmatrix_username:
+ Please fill in the configuration for nzbmatrix_username
+
+Template: sickbeard/nzbmatrix_apikey
+Type: string
+Default: ""
+Description: nzbmatrix_apikey:
+ Please fill in the configuration for nzbmatrix_apikey
+
+Template: sickbeard/newzbin
+Type: string
+Default: 0
+Description: newzbin:
+ Please fill in the configuration for newzbin
+
+Template: sickbeard/newzbin_username
+Type: string
+Default: ""
+Description: newzbin_username:
+ Please fill in the configuration for newzbin_username
+
+Template: sickbeard/newzbin_password
+Type: string
+Default: ""
+Description: newzbin_password:
+ Please fill in the configuration for newzbin_password
+
+Template: sickbeard/womble
+Type: string
+Default: 1
+Description: womble:
+ Please fill in the configuration for womble
+
+Template: sickbeard/nzbx
+Type: string
+Default: 0
+Description: nzbx:
+ Please fill in the configuration for nzbx
+
+Template: sickbeard/nzbx_completion
+Type: string
+Default: 100
+Description: nzbx_completion:
+ Please fill in the configuration for nzbx_completion
+
+Template: sickbeard/omgwtfnzbs
+Type: string
+Default: 0
+Description: omgwtfnzbs:
+ Please fill in the configuration for omgwtfnzbs
+
+Template: sickbeard/omgwtfnzbs_username
+Type: string
+Default: ""
+Description: omgwtfnzbs_username:
+ Please fill in the configuration for omgwtfnzbs_username
+
+Template: sickbeard/omgwtfnzbs_apikey
+Type: string
+Default: ""
+Description: omgwtfnzbs_apikey:
+ Please fill in the configuration for omgwtfnzbs_apikey
+
+Template: sickbeard/sab_username
+Type: string
+Default: ""
+Description: sab_username:
+ Please fill in the configuration for sab_username
+
+Template: sickbeard/sab_password
+Type: string
+Default: ""
+Description: sab_password:
+ Please fill in the configuration for sab_password
+
+Template: sickbeard/sab_apikey
+Type: string
+Default: ""
+Description: sab_apikey:
+ Please fill in the configuration for sab_apikey
+
+Template: sickbeard/sab_category
+Type: string
+Default: tv
+Description: sab_category:
+ Please fill in the configuration for sab_category
+
+Template: sickbeard/sab_host
+Type: string
+Default: http:///
+Description: sab_host:
+ Please fill in the configuration for sab_host
+
+Template: sickbeard/nzbget_password
+Type: string
+Default: tegbzn6789
+Description: nzbget_password:
+ Please fill in the configuration for nzbget_password
+
+Template: sickbeard/nzbget_category
+Type: string
+Default: tv
+Description: nzbget_category:
+ Please fill in the configuration for nzbget_category
+
+Template: sickbeard/nzbget_host
+Type: string
+Default: ""
+Description: nzbget_host:
+ Please fill in the configuration for nzbget_host
+
+Template: sickbeard/use_xbmc
+Type: string
+Default: 0
+Description: use_xbmc:
+ Please fill in the configuration for use_xbmc
+
+Template: sickbeard/xbmc_notify_onsnatch
+Type: string
+Default: 0
+Description: xbmc_notify_onsnatch:
+ Please fill in the configuration for xbmc_notify_onsnatch
+
+Template: sickbeard/xbmc_notify_ondownload
+Type: string
+Default: 0
+Description: xbmc_notify_ondownload:
+ Please fill in the configuration for xbmc_notify_ondownload
+
+Template: sickbeard/xbmc_update_library
+Type: string
+Default: 0
+Description: xbmc_update_library:
+ Please fill in the configuration for xbmc_update_library
+
+Template: sickbeard/xbmc_update_full
+Type: string
+Default: 0
+Description: xbmc_update_full:
+ Please fill in the configuration for xbmc_update_full
+
+Template: sickbeard/xbmc_update_onlyfirst
+Type: string
+Default: 0
+Description: xbmc_update_onlyfirst:
+ Please fill in the configuration for xbmc_update_onlyfirst
+
+Template: sickbeard/xbmc_host
+Type: string
+Default: ""
+Description: xbmc_host:
+ Please fill in the configuration for xbmc_host
+
+Template: sickbeard/xbmc_username
+Type: string
+Default: ""
+Description: xbmc_username:
+ Please fill in the configuration for xbmc_username
+
+Template: sickbeard/xbmc_password
+Type: string
+Default: ""
+Description: xbmc_password:
+ Please fill in the configuration for xbmc_password
+
+Template: sickbeard/use_plex
+Type: string
+Default: 0
+Description: use_plex:
+ Please fill in the configuration for use_plex
+
+Template: sickbeard/plex_notify_onsnatch
+Type: string
+Default: 0
+Description: plex_notify_onsnatch:
+ Please fill in the configuration for plex_notify_onsnatch
+
+Template: sickbeard/plex_notify_ondownload
+Type: string
+Default: 0
+Description: plex_notify_ondownload:
+ Please fill in the configuration for plex_notify_ondownload
+
+Template: sickbeard/plex_update_library
+Type: string
+Default: 0
+Description: plex_update_library:
+ Please fill in the configuration for plex_update_library
+
+Template: sickbeard/plex_server_host
+Type: string
+Default: ""
+Description: plex_server_host:
+ Please fill in the configuration for plex_server_host
+
+Template: sickbeard/plex_host
+Type: string
+Default: ""
+Description: plex_host:
+ Please fill in the configuration for plex_host
+
+Template: sickbeard/plex_username
+Type: string
+Default: ""
+Description: plex_username:
+ Please fill in the configuration for plex_username
+
+Template: sickbeard/plex_password
+Type: string
+Default: ""
+Description: plex_password:
+ Please fill in the configuration for plex_password
+
+Template: sickbeard/use_growl
+Type: string
+Default: 0
+Description: use_growl:
+ Please fill in the configuration for use_growl
+
+Template: sickbeard/growl_notify_onsnatch
+Type: string
+Default: 0
+Description: growl_notify_onsnatch:
+ Please fill in the configuration for growl_notify_onsnatch
+
+Template: sickbeard/growl_notify_ondownload
+Type: string
+Default: 0
+Description: growl_notify_ondownload:
+ Please fill in the configuration for growl_notify_ondownload
+
+Template: sickbeard/growl_host
+Type: string
+Default: ""
+Description: growl_host:
+ Please fill in the configuration for growl_host
+
+Template: sickbeard/growl_password
+Type: string
+Default: ""
+Description: growl_password:
+ Please fill in the configuration for growl_password
+
+Template: sickbeard/use_prowl
+Type: string
+Default: 0
+Description: use_prowl:
+ Please fill in the configuration for use_prowl
+
+Template: sickbeard/prowl_notify_onsnatch
+Type: string
+Default: 0
+Description: prowl_notify_onsnatch:
+ Please fill in the configuration for prowl_notify_onsnatch
+
+Template: sickbeard/prowl_notify_ondownload
+Type: string
+Default: 0
+Description: prowl_notify_ondownload:
+ Please fill in the configuration for prowl_notify_ondownload
+
+Template: sickbeard/prowl_api
+Type: string
+Default: ""
+Description: prowl_api:
+ Please fill in the configuration for prowl_api
+
+Template: sickbeard/prowl_priority
+Type: string
+Default: 0
+Description: prowl_priority:
+ Please fill in the configuration for prowl_priority
+
+Template: sickbeard/use_twitter
+Type: string
+Default: 0
+Description: use_twitter:
+ Please fill in the configuration for use_twitter
+
+Template: sickbeard/twitter_notify_onsnatch
+Type: string
+Default: 0
+Description: twitter_notify_onsnatch:
+ Please fill in the configuration for twitter_notify_onsnatch
+
+Template: sickbeard/twitter_notify_ondownload
+Type: string
+Default: 0
+Description: twitter_notify_ondownload:
+ Please fill in the configuration for twitter_notify_ondownload
+
+Template: sickbeard/twitter_username
+Type: string
+Default: ""
+Description: twitter_username:
+ Please fill in the configuration for twitter_username
+
+Template: sickbeard/twitter_password
+Type: string
+Default: ""
+Description: twitter_password:
+ Please fill in the configuration for twitter_password
+
+Template: sickbeard/twitter_prefix
+Type: string
+Default: Sick Beard
+Description: twitter_prefix:
+ Please fill in the configuration for twitter_prefix
+
+Template: sickbeard/use_notifo
+Type: string
+Default: 0
+Description: use_notifo:
+ Please fill in the configuration for use_notifo
+
+Template: sickbeard/notifo_notify_onsnatch
+Type: string
+Default: 0
+Description: notifo_notify_onsnatch:
+ Please fill in the configuration for notifo_notify_onsnatch
+
+Template: sickbeard/notifo_notify_ondownload
+Type: string
+Default: 0
+Description: notifo_notify_ondownload:
+ Please fill in the configuration for notifo_notify_ondownload
+
+Template: sickbeard/notifo_username
+Type: string
+Default: ""
+Description: notifo_username:
+ Please fill in the configuration for notifo_username
+
+Template: sickbeard/notifo_apisecret
+Type: string
+Default: ""
+Description: notifo_apisecret:
+ Please fill in the configuration for notifo_apisecret
+
+Template: sickbeard/use_boxcar
+Type: string
+Default: 0
+Description: use_boxcar:
+ Please fill in the configuration for use_boxcar
+
+Template: sickbeard/boxcar_notify_onsnatch
+Type: string
+Default: 0
+Description: boxcar_notify_onsnatch:
+ Please fill in the configuration for boxcar_notify_onsnatch
+
+Template: sickbeard/boxcar_notify_ondownload
+Type: string
+Default: 0
+Description: boxcar_notify_ondownload:
+ Please fill in the configuration for boxcar_notify_ondownload
+
+Template: sickbeard/boxcar_username
+Type: string
+Default: ""
+Description: boxcar_username:
+ Please fill in the configuration for boxcar_username
+
+Template: sickbeard/use_pushover
+Type: string
+Default: 0
+Description: use_pushover:
+ Please fill in the configuration for use_pushover
+
+Template: sickbeard/pushover_notify_onsnatch
+Type: string
+Default: 0
+Description: pushover_notify_onsnatch:
+ Please fill in the configuration for pushover_notify_onsnatch
+
+Template: sickbeard/pushover_notify_ondownload
+Type: string
+Default: 0
+Description: pushover_notify_ondownload:
+ Please fill in the configuration for pushover_notify_ondownload
+
+Template: sickbeard/pushover_userkey
+Type: string
+Default: ""
+Description: pushover_userkey:
+ Please fill in the configuration for pushover_userkey
+
+Template: sickbeard/use_libnotify
+Type: string
+Default: 0
+Description: use_libnotify:
+ Please fill in the configuration for use_libnotify
+
+Template: sickbeard/libnotify_notify_onsnatch
+Type: string
+Default: 0
+Description: libnotify_notify_onsnatch:
+ Please fill in the configuration for libnotify_notify_onsnatch
+
+Template: sickbeard/libnotify_notify_ondownload
+Type: string
+Default: 0
+Description: libnotify_notify_ondownload:
+ Please fill in the configuration for libnotify_notify_ondownload
+
+Template: sickbeard/use_nmj
+Type: string
+Default: 0
+Description: use_nmj:
+ Please fill in the configuration for use_nmj
+
+Template: sickbeard/nmj_host
+Type: string
+Default: ""
+Description: nmj_host:
+ Please fill in the configuration for nmj_host
+
+Template: sickbeard/nmj_database
+Type: string
+Default: ""
+Description: nmj_database:
+ Please fill in the configuration for nmj_database
+
+Template: sickbeard/nmj_mount
+Type: string
+Default: ""
+Description: nmj_mount:
+ Please fill in the configuration for nmj_mount
+
+Template: sickbeard/use_synoindex
+Type: string
+Default: 0
+Description: use_synoindex:
+ Please fill in the configuration for use_synoindex
+
+Template: sickbeard/use_nmjv2
+Type: string
+Default: 0
+Description: use_nmjv2:
+ Please fill in the configuration for use_nmjv2
+
+Template: sickbeard/nmjv2_host
+Type: string
+Default: ""
+Description: nmjv2_host:
+ Please fill in the configuration for nmjv2_host
+
+Template: sickbeard/nmjv2_database
+Type: string
+Default: ""
+Description: nmjv2_database:
+ Please fill in the configuration for nmjv2_database
+
+Template: sickbeard/nmjv2_dbloc
+Type: string
+Default: ""
+Description: nmjv2_dbloc:
+ Please fill in the configuration for nmjv2_dbloc
+
+Template: sickbeard/use_trakt
+Type: string
+Default: 0
+Description: use_trakt:
+ Please fill in the configuration for use_trakt
+
+Template: sickbeard/trakt_username
+Type: string
+Default: ""
+Description: trakt_username:
+ Please fill in the configuration for trakt_username
+
+Template: sickbeard/trakt_password
+Type: string
+Default: ""
+Description: trakt_password:
+ Please fill in the configuration for trakt_password
+
+Template: sickbeard/trakt_api
+Type: string
+Default: ""
+Description: trakt_api:
+ Please fill in the configuration for trakt_api
+
+Template: sickbeard/use_pytivo
+Type: string
+Default: 0
+Description: use_pytivo:
+ Please fill in the configuration for use_pytivo
+
+Template: sickbeard/pytivo_notify_onsnatch
+Type: string
+Default: 0
+Description: pytivo_notify_onsnatch:
+ Please fill in the configuration for pytivo_notify_onsnatch
+
+Template: sickbeard/pytivo_notify_ondownload
+Type: string
+Default: 0
+Description: pytivo_notify_ondownload:
+ Please fill in the configuration for pytivo_notify_ondownload
+
+Template: sickbeard/pyTivo_update_library
+Type: string
+Default: 0
+Description: pyTivo_update_library:
+ Please fill in the configuration for pyTivo_update_library
+
+Template: sickbeard/pytivo_host
+Type: string
+Default: ""
+Description: pytivo_host:
+ Please fill in the configuration for pytivo_host
+
+Template: sickbeard/pytivo_share_name
+Type: string
+Default: ""
+Description: pytivo_share_name:
+ Please fill in the configuration for pytivo_share_name
+
+Template: sickbeard/pytivo_tivo_name
+Type: string
+Default: ""
+Description: pytivo_tivo_name:
+ Please fill in the configuration for pytivo_tivo_name
+
+Template: sickbeard/use_nma
+Type: string
+Default: 0
+Description: use_nma:
+ Please fill in the configuration for use_nma
+
+Template: sickbeard/nma_notify_onsnatch
+Type: string
+Default: 0
+Description: nma_notify_onsnatch:
+ Please fill in the configuration for nma_notify_onsnatch
+
+Template: sickbeard/nma_notify_ondownload
+Type: string
+Default: 0
+Description: nma_notify_ondownload:
+ Please fill in the configuration for nma_notify_ondownload
+
+Template: sickbeard/nma_api
+Type: string
+Default: ""
+Description: nma_api:
+ Please fill in the configuration for nma_api
+
+Template: sickbeard/nma_priority
+Type: string
+Default: 0
+Description: nma_priority:
+ Please fill in the configuration for nma_priority
+
+Template: sickbeard/newznab_data
+Type: string
+Default: Sick Beard Index|http://lolo.sickbeard.com/||0!!!NZBs.org|http://nzbs.org/||0!!!Usenet-Crawler|http://www.usenet-crawler.com/||0
+Description: newznab_data:
+ Please fill in the configuration for newznab_data
+
+Template: sickbeard/coming_eps_layout
+Type: string
+Default: banner
+Description: coming_eps_layout:
+ Please fill in the configuration for coming_eps_layout
+
+Template: sickbeard/coming_eps_display_paused
+Type: string
+Default: 0
+Description: coming_eps_display_paused:
+ Please fill in the configuration for coming_eps_display_paused
+
+Template: sickbeard/coming_eps_sort
+Type: string
+Default: date
+Description: coming_eps_sort:
+ Please fill in the configuration for coming_eps_sort

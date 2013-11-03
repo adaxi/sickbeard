@@ -1,0 +1,421 @@
+#!/usr/bin/perl
+
+use Debconf::Client::ConfModule ':all';
+
+version('2.0');
+
+my $config = {};
+my @params = (
+	'config_version',
+	'log_dir',
+	'web_port',
+	'web_host',
+	'web_ipv6',
+	'web_log',
+	'web_root',
+	'web_username',
+	'web_password',
+	'anon_redirect',
+	'use_api',
+	'api_key',
+	'enable_https',
+	'https_cert',
+	'https_key',
+	'use_nzbs',
+	'use_torrents',
+	'nzb_method',
+	'usenet_retention',
+	'search_frequency',
+	'download_propers',
+	'quality_default',
+	'status_default',
+	'flatten_folders_default',
+	'provider_order',
+	'version_notify',
+	'naming_pattern',
+	'naming_custom_abd',
+	'naming_abd_pattern',
+	'naming_multi_ep',
+	'launch_browser',
+	'use_banner',
+	'use_listview',
+	'metadata_xbmc',
+	'metadata_mediabrowser',
+	'metadata_ps3',
+	'metadata_wdtv',
+	'metadata_tivo',
+	'metadata_synology',
+	'cache_dir',
+	'root_dirs',
+	'tv_download_dir',
+	'keep_processed_dir',
+	'move_associated_files',
+	'process_automatically',
+	'rename_episodes',
+	'create_missing_show_dirs',
+	'add_shows_wo_dir',
+	'extra_scripts',
+	'git_path',
+	'ignore_words',
+	'nzb_dir',
+	'torrent_dir',
+	'ezrss',
+	'hdbits',
+	'hdbits_username',
+	'hdbits_passkey',
+	'tvtorrents',
+	'tvtorrents_digest',
+	'tvtorrents_hash',
+	'btn',
+	'btn_api_key',
+	'torrentleech',
+	'torrentleech_key',
+	'nzbs',
+	'nzbs_uid',
+	'nzbs_hash',
+	'nzbsrus',
+	'nzbsrus_uid',
+	'nzbsrus_hash',
+	'nzbmatrix',
+	'nzbmatrix_username',
+	'nzbmatrix_apikey',
+	'newzbin',
+	'newzbin_username',
+	'newzbin_password',
+	'womble',
+	'nzbx',
+	'nzbx_completion',
+	'omgwtfnzbs',
+	'omgwtfnzbs_username',
+	'omgwtfnzbs_apikey',
+	'sab_username',
+	'sab_password',
+	'sab_apikey',
+	'sab_category',
+	'sab_host',
+	'nzbget_password',
+	'nzbget_category',
+	'nzbget_host',
+	'use_xbmc',
+	'xbmc_notify_onsnatch',
+	'xbmc_notify_ondownload',
+	'xbmc_update_library',
+	'xbmc_update_full',
+	'xbmc_update_onlyfirst',
+	'xbmc_host',
+	'xbmc_username',
+	'xbmc_password',
+	'use_plex',
+	'plex_notify_onsnatch',
+	'plex_notify_ondownload',
+	'plex_update_library',
+	'plex_server_host',
+	'plex_host',
+	'plex_username',
+	'plex_password',
+	'use_growl',
+	'growl_notify_onsnatch',
+	'growl_notify_ondownload',
+	'growl_host',
+	'growl_password',
+	'use_prowl',
+	'prowl_notify_onsnatch',
+	'prowl_notify_ondownload',
+	'prowl_api',
+	'prowl_priority',
+	'use_twitter',
+	'twitter_notify_onsnatch',
+	'twitter_notify_ondownload',
+	'twitter_username',
+	'twitter_password',
+	'twitter_prefix',
+	'use_notifo',
+	'notifo_notify_onsnatch',
+	'notifo_notify_ondownload',
+	'notifo_username',
+	'notifo_apisecret',
+	'use_boxcar',
+	'boxcar_notify_onsnatch',
+	'boxcar_notify_ondownload',
+	'boxcar_username',
+	'use_pushover',
+	'pushover_notify_onsnatch',
+	'pushover_notify_ondownload',
+	'pushover_userkey',
+	'use_libnotify',
+	'libnotify_notify_onsnatch',
+	'libnotify_notify_ondownload',
+	'use_nmj',
+	'nmj_host',
+	'nmj_database',
+	'nmj_mount',
+	'use_synoindex',
+	'use_nmjv2',
+	'nmjv2_host',
+	'nmjv2_database',
+	'nmjv2_dbloc',
+	'use_trakt',
+	'trakt_username',
+	'trakt_password',
+	'trakt_api',
+	'use_pytivo',
+	'pytivo_notify_onsnatch',
+	'pytivo_notify_ondownload',
+	'pyTivo_update_library',
+	'pytivo_host',
+	'pytivo_share_name',
+	'pytivo_tivo_name',
+	'use_nma',
+	'nma_notify_onsnatch',
+	'nma_notify_ondownload',
+	'nma_api',
+	'nma_priority',
+	'newznab_data',
+	'coming_eps_layout',
+	'coming_eps_display_paused',
+	'coming_eps_sort',
+	'run_as',
+);
+
+for my $p (@params) {
+	$config->{$p} = get("sickbeard/$p");
+}
+
+stop();
+
+system("getent passwd \"$config->{run_as}\" > /dev/null || useradd -m \"$config->{run_as}\"");
+system("mkdir -p /var/log/sickbeard > /dev/null");
+system("mkdir -p \$(getent passwd \"$config->{run_as}\" | cut -d: -f6 )/.sickbeard/");
+
+-e "/etc/default/sickbeard" && system("sed -i 's/RUN_AS.*/RUN_AS=$config->{run_as}/' /etc/default/sickbeard > /dev/null");
+-e "/etc/default/sickbeard" && system("sed -i 's/PORT.*/PORT=$config->{web_port}/' /etc/default/sickbeard > /dev/null");
+
+system("chown \"$config->{run_as}\" /var/log/sickbeard");
+
+open (FILE, ">", "/home/$config->{run_as}/.sickbeard/config.ini");
+print FILE qq@
+[General]
+config_version = $config->{config_version}
+log_dir = $config->{log_dir}
+web_port = $config->{web_port}
+web_host = $config->{web_host}
+web_ipv6 = $config->{web_ipv6}
+web_log = $config->{web_log}
+web_root = $config->{web_root}
+web_username = $config->{web_username}
+web_password = $config->{web_password}
+anon_redirect = $config->{anon_redirect}
+use_api = $config->{use_api}
+api_key = $config->{api_key}
+enable_https = $config->{enable_https}
+https_cert = $config->{https_cert}
+https_key = $config->{https_key}
+use_nzbs = $config->{use_nzbs}
+use_torrents = $config->{use_torrents}
+nzb_method = $config->{nzb_method}
+usenet_retention = $config->{usenet_retention}
+search_frequency = $config->{search_frequency}
+download_propers = $config->{download_propers}
+quality_default = $config->{quality_default}
+status_default = $config->{status_default}
+flatten_folders_default = $config->{flatten_folders_default}
+provider_order = $config->{provider_order}
+version_notify = $config->{version_notify}
+naming_pattern = $config->{naming_pattern}
+naming_custom_abd = $config->{naming_custom_abd}
+naming_abd_pattern = $config->{naming_abd_pattern}
+naming_multi_ep = $config->{naming_multi_ep}
+launch_browser = $config->{launch_browser}
+use_banner = $config->{use_banner}
+use_listview = $config->{use_listview}
+metadata_xbmc = $config->{metadata_xbmc}
+metadata_mediabrowser = $config->{metadata_mediabrowser}
+metadata_ps3 = $config->{metadata_ps3}
+metadata_wdtv = $config->{metadata_wdtv}
+metadata_tivo = $config->{metadata_tivo}
+metadata_synology = $config->{metadata_synology}
+cache_dir = $config->{cache_dir}
+root_dirs = $config->{root_dirs}
+tv_download_dir = $config->{tv_download_dir}
+keep_processed_dir = $config->{keep_processed_dir}
+move_associated_files = $config->{move_associated_files}
+process_automatically = $config->{process_automatically}
+rename_episodes = $config->{rename_episodes}
+create_missing_show_dirs = $config->{create_missing_show_dirs}
+add_shows_wo_dir = $config->{add_shows_wo_dir}
+extra_scripts = $config->{extra_scripts}
+git_path = $config->{git_path}
+ignore_words = $config->{ignore_words}
+[Blackhole]
+nzb_dir = $config->{nzb_dir}
+torrent_dir = $config->{torrent_dir}
+[EZRSS]
+ezrss = $config->{ezrss}
+[HDBITS]
+hdbits = $config->{hdbits}
+hdbits_username = $config->{hdbits_username}
+hdbits_passkey = $config->{hdbits_passkey}
+[TVTORRENTS]
+tvtorrents = $config->{tvtorrents}
+tvtorrents_digest = $config->{tvtorrents_digest}
+tvtorrents_hash = $config->{tvtorrents_hash}
+[BTN]
+btn = $config->{btn}
+btn_api_key = $config->{btn_api_key}
+[TorrentLeech]
+torrentleech = $config->{torrentleech}
+torrentleech_key = $config->{torrentleech_key}
+[NZBs]
+nzbs = $config->{nzbs}
+nzbs_uid = $config->{nzbs_uid}
+nzbs_hash = $config->{nzbs_hash}
+[NZBsRUS]
+nzbsrus = $config->{nzbsrus}
+nzbsrus_uid = $config->{nzbsrus_uid}
+nzbsrus_hash = $config->{nzbsrus_hash}
+[NZBMatrix]
+nzbmatrix = $config->{nzbmatrix}
+nzbmatrix_username = $config->{nzbmatrix_username}
+nzbmatrix_apikey = $config->{nzbmatrix_apikey}
+[Newzbin]
+newzbin = $config->{newzbin}
+newzbin_username = $config->{newzbin_username}
+newzbin_password = $config->{newzbin_password}
+[Womble]
+womble = $config->{womble}
+[nzbX]
+nzbx = $config->{nzbx}
+nzbx_completion = $config->{nzbx_completion}
+[omgwtfnzbs]
+omgwtfnzbs = $config->{omgwtfnzbs}
+omgwtfnzbs_username = $config->{omgwtfnzbs_username}
+omgwtfnzbs_apikey = $config->{omgwtfnzbs_apikey}
+[SABnzbd]
+sab_username = $config->{sab_username}
+sab_password = $config->{sab_password}
+sab_apikey = $config->{sab_apikey}
+sab_category = $config->{sab_category}
+sab_host = $config->{sab_host}
+[NZBget]
+nzbget_password = $config->{nzbget_password}
+nzbget_category = $config->{nzbget_category}
+nzbget_host = $config->{nzbget_host}
+[XBMC]
+use_xbmc = $config->{use_xbmc}
+xbmc_notify_onsnatch = $config->{xbmc_notify_onsnatch}
+xbmc_notify_ondownload = $config->{xbmc_notify_ondownload}
+xbmc_update_library = $config->{xbmc_update_library}
+xbmc_update_full = $config->{xbmc_update_full}
+xbmc_update_onlyfirst = $config->{xbmc_update_onlyfirst}
+xbmc_host = $config->{xbmc_host}
+xbmc_username = $config->{xbmc_username}
+xbmc_password = $config->{xbmc_password}
+[Plex]
+use_plex = $config->{use_plex}
+plex_notify_onsnatch = $config->{plex_notify_onsnatch}
+plex_notify_ondownload = $config->{plex_notify_ondownload}
+plex_update_library = $config->{plex_update_library}
+plex_server_host = $config->{plex_server_host}
+plex_host = $config->{plex_host}
+plex_username = $config->{plex_username}
+plex_password = $config->{plex_password}
+[Growl]
+use_growl = $config->{use_growl}
+growl_notify_onsnatch = $config->{growl_notify_onsnatch}
+growl_notify_ondownload = $config->{growl_notify_ondownload}
+growl_host = $config->{growl_host}
+growl_password = $config->{growl_password}
+[Prowl]
+use_prowl = $config->{use_prowl}
+prowl_notify_onsnatch = $config->{prowl_notify_onsnatch}
+prowl_notify_ondownload = $config->{prowl_notify_ondownload}
+prowl_api = $config->{prowl_api}
+prowl_priority = $config->{prowl_priority}
+[Twitter]
+use_twitter = $config->{use_twitter}
+twitter_notify_onsnatch = $config->{twitter_notify_onsnatch}
+twitter_notify_ondownload = $config->{twitter_notify_ondownload}
+twitter_username = $config->{twitter_username}
+twitter_password = $config->{twitter_password}
+twitter_prefix = $config->{twitter_prefix}
+[Notifo]
+use_notifo = $config->{use_notifo}
+notifo_notify_onsnatch = $config->{notifo_notify_onsnatch}
+notifo_notify_ondownload = $config->{notifo_notify_ondownload}
+notifo_username = $config->{notifo_username}
+notifo_apisecret = $config->{notifo_apisecret}
+[Boxcar]
+use_boxcar = $config->{use_boxcar}
+boxcar_notify_onsnatch = $config->{boxcar_notify_onsnatch}
+boxcar_notify_ondownload = $config->{boxcar_notify_ondownload}
+boxcar_username = $config->{boxcar_username}
+[Pushover]
+use_pushover = $config->{use_pushover}
+pushover_notify_onsnatch = $config->{pushover_notify_onsnatch}
+pushover_notify_ondownload = $config->{pushover_notify_ondownload}
+pushover_userkey = $config->{pushover_userkey}
+[Libnotify]
+use_libnotify = $config->{use_libnotify}
+libnotify_notify_onsnatch = $config->{libnotify_notify_onsnatch}
+libnotify_notify_ondownload = $config->{libnotify_notify_ondownload}
+[NMJ]
+use_nmj = $config->{use_nmj}
+nmj_host = $config->{nmj_host}
+nmj_database = $config->{nmj_database}
+nmj_mount = $config->{nmj_mount}
+[Synology]
+use_synoindex = $config->{use_synoindex}
+[NMJv2]
+use_nmjv2 = $config->{use_nmjv2}
+nmjv2_host = $config->{nmjv2_host}
+nmjv2_database = $config->{nmjv2_database}
+nmjv2_dbloc = $config->{nmjv2_dbloc}
+[Trakt]
+use_trakt = $config->{use_trakt}
+trakt_username = $config->{trakt_username}
+trakt_password = $config->{trakt_password}
+trakt_api = $config->{trakt_api}
+[pyTivo]
+use_pytivo = $config->{use_pytivo}
+pytivo_notify_onsnatch = $config->{pytivo_notify_onsnatch}
+pytivo_notify_ondownload = $config->{pytivo_notify_ondownload}
+pyTivo_update_library = $config->{pyTivo_update_library}
+pytivo_host = $config->{pytivo_host}
+pytivo_share_name = $config->{pytivo_share_name}
+pytivo_tivo_name = $config->{pytivo_tivo_name}
+[NMA]
+use_nma = $config->{use_nma}
+nma_notify_onsnatch = $config->{nma_notify_onsnatch}
+nma_notify_ondownload = $config->{nma_notify_ondownload}
+nma_api = $config->{nma_api}
+nma_priority = $config->{nma_priority}
+[Newznab]
+newznab_data = $config->{newznab_data}
+[GUI]
+coming_eps_layout = $config->{coming_eps_layout}
+coming_eps_display_paused = $config->{coming_eps_display_paused}
+coming_eps_sort = $config->{coming_eps_sort}
+@;
+
+close(FILE);
+
+system("chown \"$config->{run_as}\" -R \"/home/$config->{run_as}/.sickbeard\"");
+
+unless( -e "/usr/share/sickbeard/autoProcessTV/autoProcessTV.cfg") {
+	open FILE, ">/usr/share/sickbeard/autoProcessTV/autoProcessTV.cfg";
+	print FILE qq@
+[SickBeard]
+host=localhost
+port=$config->{web_port}
+username=
+password=
+web_root=$config->{web_root}
+ssl=0
+@;
+	close FILE;	
+}
+
+system("update-rc.d sickbeard defaults");
+
+1;
+

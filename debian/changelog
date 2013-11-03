@@ -1,0 +1,5 @@
+sickbeard (0~131002) unstable; urgency=low
+
+  * Initial release of packaged sickbeard
+
+ -- Gerik Bonaert <dev@adaxisoft.be>  Sun, 13 Oct 2013 17:52:57 +0200
