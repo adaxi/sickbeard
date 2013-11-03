@@ -4,7 +4,11 @@ set -e
 
 # stop sickbeard
 if pgrep -f SickBeard.py > /dev/null; then
-    /etc/init.d/sickbeard stop
+    if which invoke-rc.d >/dev/null 2>&1; then
+        invoke-rc.d sickbeard stop
+    else
+        /etc/init.d/sickbeard stop
+    fi
 fi
 
 # make sure process is killed ok and pidfile is removed
