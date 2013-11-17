@@ -6,7 +6,7 @@ Description: config_version:
 
 Template: sickbeard/log_dir
 Type: string
-Default: Logs
+Default: /var/log/sickbeard
 Description: log_dir:
  Please fill in the configuration for log_dir
 
@@ -36,7 +36,7 @@ Description: web_log:
 
 Template: sickbeard/web_root
 Type: string
-Default: ""
+Default: "/sickbeard"
 Description: web_root:
  Please fill in the configuration for web_root
 
