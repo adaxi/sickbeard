@@ -1,5 +1,5 @@
 Source: sickbeard
-Section: net 
+Section: net
 Priority: extra
 Maintainer: Gerik Bonaert <dev@adaxisoft.be>
 Build-Depends: debhelper (>= 8.0.0)
