@@ -8,7 +8,7 @@ Homepage: http://sickbeard.com
 
 Package: sickbeard
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, python (>= 2.6)
+Depends: ${misc:Depends}, ${python:Depends}, python (>= 2.6), python-cheetah
 Description: PVR application that manages your TV shows.
  Sick Beard is a PVR for newsgroup users (with limited torrent support). 
  It watches for new episodes of your favorite shows and when they are 
