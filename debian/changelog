@@ -1,3 +1,9 @@
+sickbeard (0~140403) unstable; urgency=low
+
+  * Changelog: https://github.com/midgetspy/Sick-Beard/compare/577fdba126ca5d5c5fb91280cef519eb81ef8bd3...f64b94f3e822d44de276b6902a516188c1409094
+
+ -- Gerik Bonaert <dev@adaxisoft.be>  Thu, 03 Apr 2014 20:09:28 +0000
+
 sickbeard (0~140308) unstable; urgency=low
 
   * Changelog: https://github.com/midgetspy/Sick-Beard/compare/6a8577c8d6191643aac3b452340752c46d25a083...577fdba126ca5d5c5fb91280cef519eb81ef8bd3.
