@@ -14,7 +14,7 @@ APP_PATH=/usr/share/sickbeard
 ENABLE_DAEMON=1
 
 # [required] user or uid of account to run the program as:
-RUN_AS=mediatools
+RUN_AS=
 
 # [optional] change to 1 to enable updating from webinterface
 # this changes ownership of /opt/sickbeard to user set @ RUN_AS
@@ -22,11 +22,11 @@ WEB_UPDATE=1
 
 # [optional] full path to the configuration file of your choice;
 # otherwise, the default location (~/.sickbeard) is used:
-CONFIG=
+CONFIG=/etc/sickbeard/config.ini
 
 # [optional] full path to the folder to store data (databases/thumbs) in;
 # otherwise, the default location (~/.sickbeard) is used:
-DATADIR=
+DATADIR=/var/lib/sickbeard
 
 # [optional] port number to listen on:
 PORT=8081
