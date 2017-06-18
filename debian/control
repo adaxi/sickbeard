@@ -3,6 +3,7 @@ Section: net
 Priority: extra
 Maintainer: Gerik Bonaert <dev@adaxisoft.be>
 Build-Depends: debhelper (>= 8.0.0)
+Build-Depends-Indep: dh-python
 Standards-Version: 3.9.3
 Homepage: http://sickbeard.com
 

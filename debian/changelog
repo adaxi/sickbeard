@@ -1,4 +1,10 @@
-sickbeard (0~141116) unstable; urgency=low
+sickbeard (0-1~180617) unstable; urgency=medium
+
+  * Support Debian Stretch.
+
+ -- Gerik Bonaert <dev@adaxisoft.be>  Sun, 18 Jun 2017 16:40:55 +0000
+
+sickbeard (0-1~141116) unstable; urgency=low
 
   * Changelog: https://github.com/midgetspy/Sick-Beard/compare/89f551983be77c8cf1092665b5c23e6e692968dc...7cfff7f0fa69946d37be8762b71b88ac60f10505
 
